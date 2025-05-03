@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Finish project report",
+    "category": "Work",
+    "due_date": "2025-05-10",
+    "priority": "High",
+    "description": "Complete the final report for the AI project and submit it to the supervisor.",
+    "completed": false,
+    "subtasks": [
+      "Draft introduction",
+      "Compile results",
+      "Review with team",
+      "Submit final report"
+    ]
+  },
+  {
+    "title": "Buy groceries",
+    "category": "Personal",
+    "due_date": "2025-05-04",
+    "priority": "Medium",
+    "description": "Buy weekly groceries from the supermarket.",
+    "completed": false,
+    "subtasks": [
+      "Buy milk and eggs",
+      "Get vegetables",
+      "Purchase snacks"
+    ]
+  },
+  {
+    "title": "Call mom",
+    "category": "Family",
+    "due_date": "2025-05-05",
+    "priority": "Low",
+    "description": "Check in with mom and update her on recent events.",
+    "completed": true,
+    "subtasks": []
+  },
+  {
+    "title": "Prepare hackathon slides",
+    "category": "Work",
+    "due_date": "2025-05-07",
+    "priority": "High",
+    "description": "Create presentation slides for the upcoming hackathon demo.",
+    "completed": false,
+    "subtasks": [
+      "Outline key features",
+      "Design demo flow",
+      "Rehearse presentation"
+    ]
+  }
+]

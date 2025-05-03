@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Task - Task Manager</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Task Manager</h1>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="task.html">New Task</a>
+    <a href="profile.html">Profile</a>
+    <a href="login.html">Logout</a>
+  </nav>
+</header>
+
+<main class="task-form-container">
+  <h2>Create / Edit Task</h2>
+  <form id="task-form">
+    <label for="title">Task Title</label>
+    <input type="text" id="title" placeholder="Task Title" required>
+
+    <label for="description">Description</label>
+    <textarea id="description" rows="4" placeholder="Optional description"></textarea>
+
+    <label for="due-date">Due Date</label>
+    <input type="date" id="due-date">
+
+    <label for="priority">Priority</label>
+    <select id="priority">
+      <option value="">Select priority</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+
+    <label for="category">Category</label>
+    <input type="text" id="category" placeholder="e.g. Work, Personal">
+
+    <h3>Subtasks</h3>
+    <div id="subtasks-container"></div>
+    <button type="button" id="add-subtask">+ Add Subtask</button>
+
+    <button type="submit">Save Task</button>
+  </form>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 Task Manager App</p>
+</footer>
+
+<script src="assets/js/tasks.js"></script>
+</body>
+</html>
