@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const taskId = parseInt(urlParams.get('id')) || 0;
 
-  fetch('assets/data/tasks.json')
+  fetch('./assets/data/tasks.json')
     .then(response => response.json())
     .then(tasks => {
       const task = tasks[taskId];

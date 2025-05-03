@@ -15,7 +15,7 @@ let allTasks = [];
 document.addEventListener("DOMContentLoaded", () => {
   const tasksContainer = document.querySelector(".tasks");
 
-  fetch("assets/data/tasks.json")
+  fetch("./assets/data/tasks.json")
     .then(response => response.json())
     .then(tasks => {
       allTasks = tasks;  // store globally
