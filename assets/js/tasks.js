@@ -1,35 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
   const addSubtaskBtn = document.getElementById("add-subtask");
   const subtasksContainer = document.getElementById("subtasks-container");
-
-  addSubtaskBtn.addEventListener("click", () => {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = "Subtask";
-    subtasksContainer.appendChild(input);
-  });
-});
-
-let allTasks = [];
-
-document.addEventListener("DOMContentLoaded", () => {
   const tasksContainer = document.querySelector(".tasks");
 
+  let allTasks = [];
+
+  // Subtask adder
+  if (addSubtaskBtn && subtasksContainer) {
+    addSubtaskBtn.addEventListener("click", () => {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Subtask";
+      subtasksContainer.appendChild(input);
+    });
+  }
+
+  // Load tasks
   fetch("./assets/data/tasks.json")
     .then((response) => response.json())
     .then((tasks) => {
-      allTasks = tasks; // store globally
+      allTasks = tasks;
       renderTasks(allTasks);
+      showReminders(allTasks);
     });
 
   function renderTasks(tasks) {
-    tasksContainer.innerHTML = ""; // clear first
+    if (!tasksContainer) return; // Skip if no task container
+
+    tasksContainer.innerHTML = "";
+    const today = new Date().toISOString().split("T")[0];
 
     tasks.forEach((task, index) => {
       const card = document.createElement("div");
       card.classList.add("task-card");
+
+      // Badge logic
+      let badge = "";
+      if (task.due_date) {
+        if (task.due_date === today && !task.completed) {
+          badge = '<span class="badge due-today">- Due Today</span>';
+        } else if (task.due_date < today && !task.completed) {
+          badge = '<span class="badge overdue">Overdue</span>';
+        }
+      }
+
       card.innerHTML = `
-        <h3>${task.title}</h3>
+        <h3>${task.title} ${badge}</h3>
         <p>Category: ${task.category}</p>
         <p>Due: ${task.due_date} | Priority: ${task.priority}</p>
         <p>Status: ${task.completed ? "Completed ✅" : "Pending ❌"}</p>
@@ -45,41 +61,22 @@ document.addEventListener("DOMContentLoaded", () => {
     attachTaskActions();
   }
 
-  const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
-
-  let reminders = tasks.filter(
-    (task) =>
-      task.due_date && task.due_date <= today && task.status !== "completed"
-  );
-
-  if (reminders.length > 0) {
-    let msg = "Reminder!\n";
-    reminders.forEach((task) => {
-      msg += `- "${task.title}" is due on ${task.due_date}\n`;
-    });
-    alert(msg);
-  }
-
   function attachTaskActions() {
-    const viewButtons = document.querySelectorAll(".view-btn");
-    const editButtons = document.querySelectorAll(".edit-btn");
-    const deleteButtons = document.querySelectorAll(".delete-btn");
-
-    viewButtons.forEach((button) => {
+    document.querySelectorAll(".view-btn").forEach((button) => {
       button.addEventListener("click", () => {
         const id = button.dataset.id;
         window.location.href = `task-info.html?id=${id}`;
       });
     });
 
-    editButtons.forEach((button) => {
+    document.querySelectorAll(".edit-btn").forEach((button) => {
       button.addEventListener("click", () => {
         const id = button.dataset.id;
         window.location.href = `task.html?id=${id}`;
       });
     });
 
-    deleteButtons.forEach((button) => {
+    document.querySelectorAll(".delete-btn").forEach((button) => {
       button.addEventListener("click", () => {
         const id = button.dataset.id;
         if (confirm("Are you sure you want to delete this task?")) {
@@ -88,5 +85,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+  }
+
+  function showReminders(tasks) {
+    const today = new Date().toISOString().split("T")[0];
+    const reminders = tasks.filter(
+      (task) => task.due_date && task.due_date <= today && !task.completed
+    );
+
+    if (reminders.length > 0) {
+      let msg = "Reminder!\n";
+      reminders.forEach((task) => {
+        msg += `- "${task.title}" is due on ${task.due_date}\n`;
+      });
+      alert(msg);
+    }
   }
 });
