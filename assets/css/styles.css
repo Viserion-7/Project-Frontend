@@ -1,94 +1,122 @@
 /* Base reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Typography */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  /* Header */
-  .header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header nav a {
-    color: white;
-    margin-left: 1rem;
-    text-decoration: none;
-  }
-  
-  .header nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Layout */
-  .container {
-    display: grid;
-    grid-template-columns: 1fr; /* single column */
-    padding: 1rem;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  }
-  
-  .sidebar input {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Task List */
-  .task-list {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+/* Typography */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* single column */
+  padding: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Task List */
+.task-list {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.tasks {
+  margin-top: 1rem;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.footer-icon {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.footer-icon.left {
+  position: absolute;
+  left: 3rem;
+}
+
+.footer-icon.right {
+  position: absolute;
+  right: 3rem;
+}
+
+.footer-icon:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
   }
-  
-  .tasks {
-    margin-top: 1rem;
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #eee;
-    margin-top: 1rem;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  /* Auth container */
+}
+
+/* Auth container */
 .auth-container {
   max-width: 400px;
   margin: 5rem auto;
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -107,7 +135,7 @@
 .auth-container form button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -122,7 +150,6 @@
   margin-top: 1rem;
 }
 
-
 /* Profile container */
 .profile-container {
   max-width: 600px;
@@ -130,7 +157,7 @@
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .profile-container h2 {
@@ -154,7 +181,7 @@
   width: 100%;
   padding: 0.75rem;
   margin-top: 1.5rem;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -165,7 +192,6 @@
   background-color: #45a049;
 }
 
-
 /* Task form container */
 .task-form-container {
   max-width: 700px;
@@ -173,7 +199,7 @@
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .task-form-container h2 {
@@ -195,13 +221,19 @@
   border-radius: 4px;
 }
 
+.subtasks-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 #subtasks-container input {
   margin-bottom: 0.5rem;
 }
 
 #add-subtask {
   margin-top: 0.5rem;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
   padding: 0.5rem;
   border: none;
@@ -210,14 +242,27 @@
 }
 
 #add-subtask:hover {
-  background-color: #1976D2;
+  background-color: #1976d2;
+}
+
+#generate-subtasks {
+  background-color: #ff9800;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#generate-subtasks:hover {
+  background-color: #f57c00;
 }
 
 .task-form-container form button[type="submit"] {
   width: 100%;
   padding: 0.75rem;
   margin-top: 1.5rem;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -233,7 +278,7 @@
   background: #fff;
   padding: 1rem;
   border-radius: 6px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
 
@@ -263,12 +308,12 @@
 }
 
 .edit-btn {
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
 }
 
 .edit-btn:hover {
-  background-color: #1976D2;
+  background-color: #1976d2;
 }
 
 .delete-btn {
@@ -287,7 +332,7 @@
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .task-info-container h2 {
@@ -314,7 +359,7 @@
 }
 
 #mark-completed {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -329,7 +374,7 @@
 .back-btn {
   display: inline-block;
   margin-left: 1rem;
-  color: #2196F3;
+  color: #2196f3;
   text-decoration: none;
 }
 

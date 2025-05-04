@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile - Task Manager</title>
+  <title>Profile - Task Ninja</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
 
-<header class="header">
-  <nav><h1><a href="/">Task Manager</a></h1></nav>
-  <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="task.html">New Task</a>
-    <a href="profile.html">Profile</a>
-    <a href="login.html">Logout</a>
-  </nav>
-</header>
+  <header class="header">
+    <nav>
+      <h1><a href="/">Task Ninja</a></h1>
+    </nav>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="task.html">New Task</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
 
-<main class="profile-container">
-  <h2>Your Profile</h2>
-  <form id="profile-form">
-    <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" placeholder="Full Name" required>
+  <main class="profile-container">
+    <h2>Your Profile</h2>
+    <form id="profile-form">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" placeholder="Full Name" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" placeholder="Email" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Email" required>
 
-    <label for="password">New Password (optional)</label>
-    <input type="password" id="password" placeholder="New Password">
+      <label for="password">New Password (optional)</label>
+      <input type="password" id="password" placeholder="New Password">
 
-    <button type="submit">Save Changes</button>
-  </form>
-</main>
+      <button type="submit">Save Changes</button>
+    </form>
+  </main>
 
-<footer class="footer">
-  <p>&copy; 2025 Task Manager App</p>
-</footer>
+  <footer class="footer">
+    <a href="https://github.com/Viserion-7/Project-Frontend" target="_blank" class="footer-icon left">
+      <img src="assets/github.svg" alt="GitHub" width="24" height="24">
+    </a>
 
-<script src="assets/js/auth.js"></script>
+    <p>&copy; 2025 Task Ninja App</p>
+
+    <a href="mailto:support@example.com" class="footer-icon right">
+      Contact Us
+    </a>
+  </footer>
+
+  <script src="assets/js/auth.js"></script>
 </body>
+
 </html>
